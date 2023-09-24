@@ -1,0 +1,48 @@
+.my-profile{
+    margin: 30px 20px;
+    display: flex;
+    justify-content: space-between;
+}
+.my-details{
+    display: flex;
+    gap: 30px;
+}
+.user-icon{
+    font-size: 4rem;
+    padding: 5px 15px;
+    background-color: gainsboro;
+    color: white;
+    border-radius: 50%;
+}
+.user-details{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.user-details h2{
+    margin: 0;
+}
+.user-details p{
+    margin: 0;
+    font-size: 0.8rem;
+}
+.go-pro-btn{
+    background-color: #2bc5b4;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 13px;
+    cursor: pointer;
+
+}
+.user-logout{
+    padding-right: 12%;
+    padding-top: 20px;
+}
+.user-logout button{
+    padding: 6px 20px;
+    border: 1px solid #3E3E3E;
+    border-radius: 20px;
+    background-color: white;
+    cursor: pointer;
+}

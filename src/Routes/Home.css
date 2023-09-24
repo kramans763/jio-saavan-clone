@@ -1,0 +1,19 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+.hero{
+    padding:70px 10px;
+    display: flex;
+    width: 100%;
+}
+.left-sideNavbar{
+    width: 15%;
+    height: 500x;
+}
+.main{
+    width: 85%;
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+}

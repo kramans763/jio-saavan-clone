@@ -1,0 +1,71 @@
+.sidebar-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    padding-left: 40px;
+    padding-top: 20px;
+    position: fixed; 
+    left: 0px;
+}
+.browse{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: start;
+
+}
+.browse p{
+    color: #828da8;
+    font-weight: 600;
+    font-size: 12px;
+}
+.browse-list{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: start;
+    gap: 8px;
+}
+.browse-list .link{
+    color:#3e3e3e;
+}
+.library{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: start;
+    padding-top: 15px;
+}
+
+.library p{
+    color: #828da8;
+    font-weight: 600;
+    font-size: 12px;
+}
+.library-list{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: start;
+    gap: 8px;
+    color: #3e3e3e;
+}
+.library-list .link{
+    color:#3e3e3e;
+}
+.library-list i{
+    margin-right: 10px;
+    font-size: 15px;
+}
+.palylist-btn{
+    border: 1px solid #2bc5b4;
+    color: #2bc5b4;
+    border-radius: 30px;
+    margin-top: 30px;
+    padding: 8px 45px;
+    font-size: 16px;
+}
+.palylist-btn i{
+    font-size: large;
+}

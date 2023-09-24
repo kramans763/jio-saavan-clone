@@ -1,0 +1,37 @@
+.song-category{
+    margin-top: 30px;
+    margin-right: 30px;
+}
+.top-page{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid rgb(228,222,222);
+    padding-bottom: 15px;
+ }
+ .top-page-links{
+     display: flex;
+     gap: 40px;
+ }
+ .surpriseME{
+    border-radius: 10px;
+    border: none;
+    background-color: #2bc5b4;
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
+ }
+ .languages{
+     display: flex;
+     justify-content: space-around;
+     padding-top: 15px;
+     border-bottom: 1px solid rgb(228,222,222);
+     padding-bottom: 40px;
+ }
+ .languages .link{
+    padding:3px;
+ }
+ .languages .link:hover{
+   background-color: rgb(228,222,222);
+   border-radius: 8px;
+   
+ }

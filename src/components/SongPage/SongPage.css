@@ -1,0 +1,83 @@
+.song-page{
+  margin: 40px 20px;
+}
+.links-song-page{
+   margin-top: 10px;
+   margin-right: 20px;
+}
+.trending{
+    color: #3e3e3e;
+    font-size: 20px;
+    
+}
+.song-list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 20px;
+    width: 100%;
+}
+.card{
+    display: flex;
+    flex-direction: column;
+    width: calc(14.2% - 20px);
+    
+}
+.card-image{
+    width: 100%;
+    object-fit: contain; 
+    transition: filter 0.3s ease;
+    border-radius: 8px;
+}
+.radio-image{
+    border-radius: 50%;
+    transition: filter 0.3s ease;
+}
+.radio-image:hover{
+    filter: grayscale(100%); 
+    opacity: 0.7;
+}
+.title{
+    color: #3e3e3e;
+    margin: 0px;
+    text-align: center;
+}
+.artist-page-title{
+    display: none;
+}
+.artists{
+    color: #3e3e3e;
+    margin: 0px;
+    text-align: center;
+}
+
+.pagination{
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 200px;
+    gap: 15px;
+    
+}
+.hidePagination{
+    display: none;
+}
+/* .make-fvrt{
+ transition: .5s ease;
+  opacity: 0; 
+  color: white;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+  font-size: 1.5rem;
+}  */
+
+.card-image:hover{
+    filter: grayscale(100%); 
+    opacity: 0.7;
+} 
+

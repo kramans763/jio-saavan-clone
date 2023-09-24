@@ -1,0 +1,79 @@
+.signup{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.accounts{
+    float: right;
+    padding-top: 8px;
+    padding-right: 20px;
+    font-size: 15px;
+}
+.login-from-signup-btn{
+    padding: 6px 18px;
+    border: 1px solid #2a2d36;
+    border-radius: 15px;
+    background-color: white;
+    margin-left: 5px;
+    cursor: pointer;
+}
+.signup-form{
+   position: absolute;
+   height: 80%;
+   width: 50%;
+   top: 12%;
+   left: 20%;
+   text-align: center;
+
+}
+.welcome-text{
+    color: #3e3e3e;
+    margin-bottom: 0px;
+    font-size: 32px;
+}
+.signup-text{
+    color: #3e3e3e;
+    margin-top: 0px;
+    font-size: 15px;
+}
+.signup-form input{
+    width: 95%;
+    padding: 10px;
+    border-radius: 25px;
+    background-color: white;
+    margin-top: 10px;
+    font-size: 1.2rem;
+    border: 1px solid rgb(216,210,210);
+    text-align: center;
+}
+.signup-btn{
+    margin-top: 20px;
+    width: 100%;
+    padding: 10px;
+    border-radius: 20px;
+    background-color: #258F83;
+    color: white;
+    border: none;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+.para-text{
+    font-size: 10px;
+    color: #3e3e3e;
+    margin-top: 0px;
+}
+
+.signup-with-email-btn{
+    margin-top: 10px;
+    padding: 12px 40px;
+    background-color: black;
+    color: white;
+    border-radius: 20px;
+    margin-right: 10px;
+    border: none;
+    cursor: pointer;
+}
+.error-text{
+    color: red;
+}

@@ -1,0 +1,70 @@
+
+.live-music{
+    display: flex;
+    justify-content: space-between;
+    height: 70px;
+    width: 100%;
+    position: fixed;
+    bottom: 0px;
+    left: 0;
+    right: 0;
+    margin-top: 20px;
+    background-color: #f6f6f6;
+    /* border-top: 1px solid rgb(228,222,222); */
+}
+.left-live-music{
+    width: 20%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.left-live-music img{
+   width: 40px;
+   height: 40px;
+   padding: 10px;
+}
+.left-live-music p{
+    font-size:0.8rem ;
+}
+.center-live-music{
+    width: 20%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.center-live-music button{
+    font-size: 1.3rem;
+    border: none;
+    background: transparent;
+}
+.right-live-music{
+    display: flex;
+    justify-content: space-evenly;
+    width: 20%;
+    height: 100%;
+    align-items: center;
+}
+.volume-icon{
+    color: black !important;
+}
+
+.volume-slider-custom {
+    width: 60px;
+    height: 5px;
+    transform: rotate(-90deg);
+    transform-origin: top;
+  }
+  .progress-bar-top {
+    height: 3px;
+    position: absolute;
+    top: 0; /* Position at the top */
+    left: 0; /* Start from the left edge */
+    right: 0; /* Extend to the right edge */
+    color: #2BC5B4;
+  }
+  
+  .progress-bar {
+    height: 100%;
+    background-color: #2BC5B4;
+  }
