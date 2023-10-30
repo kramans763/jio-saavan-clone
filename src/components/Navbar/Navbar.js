@@ -119,8 +119,8 @@ async function  handleMoodChange(e){
         ) : (
           // If authToken is not present, show Login link
           <div className='login-signup'>
-            <Link to='/login' className='link'>Login</Link>
-            <Link to='/signup' className='link'>SignUp</Link>
+            <Link to='/login' className='login link'>Login</Link>
+            <Link to='/signup' className='signup link'>SignUp</Link>
           </div>
           
         )}

@@ -88,4 +88,10 @@
     filter: grayscale(100%); 
     opacity: 0.7;
 } 
+@media (max-width: 975px){
+    .card{
+        width: calc(25% - 20px);
+    }
+}
+
 
