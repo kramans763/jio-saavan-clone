@@ -29,3 +29,10 @@
 .footer-right a:nth-child(5){
     color:darkred;
 }
+
+@media (max-width: 975px){
+    .footer{
+        flex-direction: column;
+        margin-bottom: 2rem;
+    }
+}
