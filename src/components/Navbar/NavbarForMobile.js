@@ -1,8 +1,16 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import "./NavbarForMobile.css"
 
 const NavbarForMobile = () => {
+  const [authToken, setAuthToken] = useState(localStorage.getItem('authToken'));
+  useEffect(() => {
+    // Check if authToken is in localStorage when the component mounts
+    const authTokenFromLocalStorage = localStorage.getItem('authToken');
+    if (authTokenFromLocalStorage) {
+      setAuthToken(authTokenFromLocalStorage);
+    }
+  }, []);
   return (
     <div className='navbar-mobile'>
       <div className='navbar-home'>
@@ -17,10 +25,18 @@ const NavbarForMobile = () => {
           <Link  to='/underconstruction' className='link'> <i class="fa-brands fa-safari"></i></Link>
           <Link to='/underconstruction' className='link'>Browse</Link>
       </div> 
-      <div className='navbar-myProfile'>
+      {
+        authToken?
+        <div className='navbar-myProfile'>
+        
           <Link to='/me' className='link'><i class="fa-solid fa-user"></i></Link>
-          <Link to='/me' className='link'>My Music</Link>
-      </div>
+          <Link to='/me' className='link'>My Music</Link> 
+        </div>:
+        <div className='navbar-myProfile'>
+          <Link to='/login' className='link'><i class="fa-solid fa-right-to-bracket"></i></Link>
+          <Link to='/login' className='link'>Login</Link> 
+         </div>
+      }
     </div>
   )
 }
