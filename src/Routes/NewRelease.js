@@ -4,6 +4,8 @@ import LeftSideNavbar from '../components/LeftSideNavbar/LeftSideNavbar';
 
 import SongCategoryLink from '../components/SongCategoryLink/SongCategoryLink';
 import SongPage from '../components/SongPage/SongPage';
+import NavbarForMobile from '../components/Navbar/NavbarForMobile';
+import Footer from '../components/Footer/Footer';
 
 
 const NewRealese = () => {
@@ -19,11 +21,14 @@ const NewRealese = () => {
               <SongCategoryLink />
               <SongPage 
                  pageType="New Songs"
+                 currentPage={2}
               />
+              <Footer/>
         </div>
-
-       
         
+      </div>
+      <div className='navbarForMobile'>
+         <NavbarForMobile/>
       </div>
     </div>
   )

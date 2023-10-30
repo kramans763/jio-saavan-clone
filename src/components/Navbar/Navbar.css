@@ -15,46 +15,74 @@ body{
     z-index: 9999;
 
 }
-.link{
-    text-decoration: none;
-    color: #3E3E3E;
-    font-weight: 600;
-    font-size: 0.9rem;
-}
+
 
  .left-nav{
     display: flex;
     height: 100%;
-    width: 27%;
+    width: 30%;
     align-items: center;
-    justify-content: space-around;
+    justify-content: start;
     white-space: nowrap;
+    padding: 0px 1rem;
+
+ }
+ .left-nav .logo{
+  margin-right: 20px;
 
  }
 .left-nav img{
     height: 60%;
-    padding-top: 10px;
+    padding-top: 5px;
+}
+.nav-links{
+  display: flex;
+  gap: 10px;
+}
+
+.link{
+    text-decoration: none;
+    color: #3E3E3E;
+    font-weight: 600;
+   
+    /* padding-left: 10px; */
 }
  .search-bar{
-    height: 100%;
-    width: 48%;
-    margin-left: 5%;
-    padding-top: 8px;
- }
- .search-bar input{
-    width: 100%;
-    height: 68%;
-    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border: 1px solid rgb(216,210,210);
-    border-radius: 30px;
-    text-align: center;
+    border-radius: 25px;
+    width: 45%;
+    height: 60%;
+    background-color: white;
+    padding: 5px;
+    gap: 10px;
+    margin-top: 0.2rem;
+    padding-left: 20%;
+    
  }
+ .search-bar >input{
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    
+ }
+ .search-bar >input:focus{
+  outline: none;
+ }
+ .search-bar .searchIcon{
+  color: gray;
+  
+ }
+ 
+
  .right-nav{
     display: flex;
     justify-content: space-around;
     align-items: center;
     height: 100%;
-    width: 27%;
+    width: 25%;
     margin-left: 8%;
     white-space: nowrap;
  }
@@ -62,6 +90,16 @@ body{
  .login-signup{
   display: flex;
   gap: 20px;
+ }
+ .music-mood select{
+  color:#3E3E3E;
+  border: none;
+  background-color: #f6f6f6;
+  font-weight: 600;
+  font-size: 0.8rem;
+ }
+ .music-mood select:focus{
+ outline: none;
  }
 
 /* Add styling for the user-dropdown container */
@@ -112,6 +150,29 @@ body{
   .user-dropdown:hover .dropdown-content {
     display: block; 
   }
+  @media (min-width: 976px) and (max-width: 1080px){
+    
+  }
+
+  @media (max-width: 975px){
+    .navbar{
+      justify-content: space-between;
+    }
+    
+    .nav-links{
+      display: none;
+    }
+    .user-dropdown{
+      display: none;
+
+    }
+    login-signup{
+      display: none;
+    }
+    
+
+}
+  
 
 
 

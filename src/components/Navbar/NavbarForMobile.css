@@ -1,0 +1,28 @@
+.navbar-mobile{
+    display: flex;
+    width: 100%;
+    height: 50px;
+    background-color: #f6f6f6;
+    align-items: center;
+    justify-content: space-around;
+    position: fixed;
+    bottom: 0px;
+    border-top: 1px solid rgb(228,222,222);
+    
+}
+.navbar-home{
+    display: flex;
+    flex-direction: column;
+}
+.navbar-search{
+    display: flex;
+    flex-direction: column;
+}
+.navbar-browse{
+    display: flex;
+    flex-direction: column;
+}
+.navbar-myProfile{
+    display: flex;
+    flex-direction: column;
+}

@@ -68,3 +68,9 @@
     height: 100%;
     background-color: #2BC5B4;
   }
+
+  @media (max-width: 975px){
+    .live-music{
+        bottom: 50px;
+    }
+  }

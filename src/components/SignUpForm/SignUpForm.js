@@ -5,6 +5,7 @@ import { useForm } from 'react-hook-form';
 
 const SignUpForm = () => {
   const { register, handleSubmit, formState: { errors } } = useForm();
+  const[isRegistered,setIsRegistered]=useState(false);
   const navigate=useNavigate();
 
   const onSubmit = async (data) => {
@@ -22,16 +23,11 @@ const SignUpForm = () => {
       if (response.ok) {
          alert("signup successfull");
         navigate("/login");
-        // const result = await response.json();
-        // const authToken = result.token;
 
-        // // Store the authentication token in localStorage
-        // localStorage.setItem('authToken', authToken);
-
-        // // Redirect or perform other actions after successful signup
         console.log('Signup successful');
       } else {
-        // Handle signup error, e.g., display an error message
+
+        setIsRegistered(true);  
         console.error('Signup failed', await response.text());
       }
     } catch (error) {
@@ -71,7 +67,7 @@ const SignUpForm = () => {
                           })}
                    />
                    {errors.password && <p className='error-text'>Password must be at least 8 characters long, contain at least one lowercase letter, one uppercase letter, one number and one special character.</p>}
-
+                   {isRegistered?<p className='error-text'>User already exist.Please Login.</p>:''}
                   <button type='submit' className='signup-btn'>Continue</button>
                     <p className='para-text'><em>By selecting ‘Continue’, you agree to JioSaavn’s Terms of Service and Privacy Policy.</em></p>
                 </div> 

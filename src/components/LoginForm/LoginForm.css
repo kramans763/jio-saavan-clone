@@ -76,4 +76,11 @@
 }
 .error-text{
     color: red;
+    margin: 0;
+}
+
+@media (max-width: 975px){
+    .login{
+       padding-left: 5rem;
+    }
 }

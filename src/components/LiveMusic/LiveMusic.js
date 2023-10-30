@@ -3,12 +3,25 @@ import "./LiveMusic.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlay, faPause, faBackward, faForward,faVolumeUp } from '@fortawesome/free-solid-svg-icons';
 const LiveMusic = (props) => {
-  const{audio,isPlaying,togglePlayback,title,image,artistName}=props;
+  const
+    {audio,
+     isPlaying,
+     togglePlayback,
+     title,
+     image,
+     artistName,
+     relatedSongs,
+     updateCurrentSong,
+    }=props;
+
+  
+
   const [currentTime, setCurrentTime] = useState(0);
   const [totalTime, setTotalTime] = useState(0);
   const [volume, setVolume] = useState(1);
   const [showVolumeSlider, setShowVolumeSlider] = useState(false);
   const progressBarRef = useRef(null);
+  const [currentSongIndex, setCurrentSongIndex] = useState(0);
 
 
 // Update the currentTime and totalTime when the audio is loaded....
@@ -46,13 +59,32 @@ const LiveMusic = (props) => {
   const formattedTotalTime = formatTime(totalTime);
 
   
-  const goBackward = () => {
-    // Add logic to go backward in the song
-  };
+    const playCurrentSong = (index) => {
+      const song = relatedSongs[index];
+      audio.src = song.audio_url;
+      audio.play();
+      setCurrentSongIndex(index);
+      updateCurrentSong(index); 
+    };
 
-  const goForward = () => {
-    // Add logic to go forward in the song
-  };
+    
+    const goBackward = () => {
+      if (currentSongIndex > 0) {
+        playCurrentSong(currentSongIndex - 1);
+      }
+    };
+
+    // Implement the "go forward" logic
+    const goForward = () => {
+      if (currentSongIndex < relatedSongs.length - 1) {
+        playCurrentSong(currentSongIndex + 1);
+      }
+    };
+
+    // ...
+
+
+
   const handleProgressBarChange = (event) => {
     const newCurrentTime = (event.target.value / 100) * audio.duration;
     audio.currentTime = newCurrentTime;

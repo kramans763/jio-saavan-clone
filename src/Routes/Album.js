@@ -2,10 +2,10 @@ import React from 'react'
 import Navbar from '../components/Navbar/Navbar'
 import LeftSideNavbar from '../components/LeftSideNavbar/LeftSideNavbar'
 import SongCategoryLink from '../components/SongCategoryLink/SongCategoryLink'
-import SongPage from '../components/SongPage/SongPage'
 import NavbarForMobile from '../components/Navbar/NavbarForMobile'
-import Footer from '../components/Footer/Footer'
-const Podcast = () => {
+import SongPage from '../components/SongPage/SongPage'
+
+const Album = () => {
   return (
     <div>
         <Navbar />
@@ -16,12 +16,12 @@ const Podcast = () => {
 
         <div className='main'>  
               <SongCategoryLink />
-              <SongPage
-                pageType="Trending Podcasts"
-                currentPage={2}
+              <SongPage 
+                 pageType="Albums"
+                 currentPage={1}
+                 
               />
-              <Footer/>
-        </div>   
+        </div>
         
       </div>
       <div className='navbarForMobile'>
@@ -31,4 +31,4 @@ const Podcast = () => {
   )
 }
 
-export default Podcast
+export default Album

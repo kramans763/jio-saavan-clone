@@ -58,3 +58,13 @@
 .right-login{
     width: 50%;
 }
+
+@media (max-width: 975px){
+    .left-login{
+        display: none;
+    }
+   
+
+}
+
+

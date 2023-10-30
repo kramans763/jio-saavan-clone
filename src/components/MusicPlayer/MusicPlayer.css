@@ -55,6 +55,9 @@
     justify-content: space-between;
     cursor: pointer;
     padding: 5px;
+    background-color: white;
+    box-shadow: -2px 4px 5px 0px rgba(191,165,165,0.75);
+    -webkit-box-shadow: -2px 4px 5px 0px rgba(191,165,165,0.75);
 }
 .list-of-song:hover{
     background-color: white;

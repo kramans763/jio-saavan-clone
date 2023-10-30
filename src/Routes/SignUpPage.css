@@ -58,3 +58,10 @@
 .right-signup{
     width: 50%;
 }
+@media (max-width: 975px){
+    .left-signup{
+        display: none;
+    }
+   
+
+}

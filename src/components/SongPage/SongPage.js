@@ -3,85 +3,111 @@ import React from 'react'
 import "./SongPage.css";
 import { Link } from "react-router-dom";
 import { useNavigate } from 'react-router-dom';
+import loaderGif from "../../Assets/loader.gif";
 
 const SongPage = (props) => {
   const [songDetails, setSongDetails] = useState([]);
-  const[currentPage,setCurrentPage]=useState(1);
+  const currentPage=props.currentPage;
+
   let pageType=props.pageType;
-  const songsPerPage = 14;
+  
   const navigate = useNavigate();
-  let totalLength=100;
+ const[isArtist,setIsArtist]=useState(false);
+ const[isLoading, setIsLoading]=useState(true);
 
 
   async function fetchSongs(){
     try {
-      
-      let queryParam= (props.pageType==="Top Artists"? "" : `?page=${currentPage}&limit=${songsPerPage}`);
+      const jwtToken =localStorage.getItem("authToken");
+      let queryParam= (props.pageType==="Top Artists"? "" : `?page=1&limit=50`);
     
      const response=await fetch(`https://academics.newtonschool.co/api/v1/music/song${queryParam}`,{ headers: {
-      'Authorization': 'Bearer YOUR_JWT_TOKEN',
+      'Authorization': `Bearer ${jwtToken}`,
       'projectId': 'f104bi07c490'
      }});
     let data=await response.json();
     data=data.data;
-    // let atristArray=[];
-    // if(props.pageType==="Top Artists"){
-    //     const uniqueArtist=[];
-    // }
-    console.log("dataaaa",data);
-    setSongDetails(data);
     localStorage.setItem('songDetails', JSON.stringify(data));
+    if(props.pageType==='Top Artists'){
+      const uniqueArr=[];
+      const arrToReturn=[];
+      const unique = (data.map((item) => {
+          if(!uniqueArr.includes(item.artist[0].name)){
+            uniqueArr.push(item.artist[0].name);
+            arrToReturn.push(item);
+          }
+       
+      }));
+      data=arrToReturn;
+      setIsArtist(true)
+      console.log("uniqeArr",arrToReturn);
+      console.log("uniqe",uniqueArr);
+    }
+    console.log("dataaaa",data);
+    
+    await renderSongs(data,currentPage,14);
+  
   } catch (error) {
     console.error('Error fetching songs:', error);
+    }
+    // setIsLoading(false);
   }
-  }
+  async function renderSongs(data,page, limit) {
 
+    // Calculate the start and end index for rendering based on the current page
+    const startIndex = (page-1) * limit;
+    const endIndex = startIndex + limit;
+    const toRenderData= await data.slice(startIndex, endIndex)
+    // Render the items for the current page
+     setSongDetails(toRenderData);
+    setIsLoading(false);
+  }
+  
   useEffect(()=>{
-     fetchSongs();
+    
+     fetchSongs();    
+     
   },[currentPage])
 
-  const handleNextPage = () => {
-      setCurrentPage(currentPage=> currentPage + 1);
-  };
-
-  
-  const handlePrevPage = () => {
-    if (currentPage > 1) {
-      setCurrentPage(currentPage - 1);
-    }
-  };
+ 
 
   const handleSongPlay = (activeSong) => {
     navigate(`/songplay`, { state: { activeSong } });
   }
 
+  
   return (
-    <div className={pageType==="Trending Now"? "song-page" :"links-song-page" }>
-      <h1 className='trending'>{pageType}</h1>
-      <div className='song-list'>
+    <>
+    {
+      isLoading?
+      <div className="loading">
+        <img  src={loaderGif}/>
+      </div> :
+   
+     <div className={pageType==="Trending Now"? "song-page" :"links-song-page" }>  
+       <h1 className='trending'>{pageType}</h1>
+       <div className='song-list'>
         {songDetails && songDetails.length
           && songDetails.map((item)=>{
             const activeSong=item;
             return(
             <div className='card' onClick={() => handleSongPlay(activeSong)}>
-            <img className={ (pageType==="Radio Stations" || pageType==="Top Artists")? "radio-image":"card-image"} src={activeSong.artist[0].image} alt='song'/>
+            {isArtist?<img className="radio-image" src={activeSong.artist[0].image}/>
+              :  
+              <img className={ (pageType==="Radio Stations" || pageType==="Top Artists")? "radio-image":"card-image"} src={activeSong.thumbnail} alt='song'/>
+            }
             <p className={pageType==="Top Artists"? "artist-page-title" :"title"}>{activeSong.title}</p>
             <p className="artists">{activeSong.artist[0].name}</p>
-            {/* <i className=" make-fvrt fa-solid fa-play"></i> */}
+           
             </div> 
             ) 
           })
           }
       </div>
-      {pageType==="Trending Now"?
-      <div className="pagination">
-        <Link to="/"><button className="prev-btn" onClick={handlePrevPage} disabled={currentPage === 1}>Prev</button></Link>
-        <Link to="/"><button className="curr-btn">Current Page:{currentPage}</button></Link>
-        <Link to="/"><button className="next-btn" onClick={handleNextPage} disabled={totalLength <=((currentPage*songsPerPage)-2)}>Next</button></Link>
-      </div>
-      :<div className="hidePagination"></div>
-      }
+    
     </div>
+    }
+    </>
   )
 }
 

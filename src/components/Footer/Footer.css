@@ -1,0 +1,31 @@
+.footer{
+    display: flex;
+    height: 30px;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f6f6f6;
+    border-top: 1px solid rgb(228,222,222);
+    padding: 1.5rem;
+}
+.footer-right{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 10px;
+    text-align: center;
+
+}
+.footer-right a{
+    font-size: 1.5rem;
+}
+
+.footer-right a:nth-child(3){
+    color: #1DA1F2;
+}
+
+.footer-right a:nth-child(4){
+    color: red;
+}
+.footer-right a:nth-child(5){
+    color:darkred;
+}

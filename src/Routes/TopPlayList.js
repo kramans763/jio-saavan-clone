@@ -3,6 +3,8 @@ import Navbar from '../components/Navbar/Navbar'
 import LeftSideNavbar from '../components/LeftSideNavbar/LeftSideNavbar'
 import SongCategoryLink from '../components/SongCategoryLink/SongCategoryLink'
 import SongPage from '../components/SongPage/SongPage'
+import NavbarForMobile from '../components/Navbar/NavbarForMobile'
+import Footer from '../components/Footer/Footer'
 
 const TopPlayList = () => {
   return (
@@ -17,10 +19,15 @@ const TopPlayList = () => {
           <SongCategoryLink />
           <SongPage 
            pageType="Top PlayList"
+           currentPage={1}
            />
+           <Footer/>
       </div> 
     
     </div>
+    <div className='navbarForMobile'>
+         <NavbarForMobile/>
+      </div>
   </div>
   )
 }

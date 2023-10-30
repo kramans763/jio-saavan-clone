@@ -1,26 +1,19 @@
 import React, { useState,useEffect } from 'react'
 import "./Navbar.css";
-import CustomSelect from './CustomSelect';
-import { Link, useNavigate } from 'react-router-dom';
 
-const Navbar = () => {
-  const options = [
-    { value: 'hindi', label: 'Hindi' },
-    { value: 'english', label: 'English' },
-    { value: 'bhojpuri', label: 'Bhojpuri' },
-    { value: 'punjabi', label: 'Punjabi' },
-    { value: 'haryanvi', label: 'Haryanvi' },
-    { value: 'tamil', label: 'Tamil' },
-    { value: 'telugu', label: 'Telugu' },
-    { value: 'kannada', label: 'Kannada' },
-    { value: 'bengali', label: 'Bengali' },
-    { value: 'gujrati', label: 'Gujrati' },
-    { value: 'rajasthani', label: 'Rajasthani' },
-    { value: 'urdu', label: 'Urdu' },
-];
+import { Link, useNavigate } from 'react-router-dom';
+import Search from '../../Routes/Search';
+
+const Navbar = (props) => {
+
+  const{onChange,searchWord}=props;
+
 const [authToken, setAuthToken] = useState(localStorage.getItem('authToken'));
 const navigate = useNavigate();
 const [showDropdown, setShowDropdown] = useState(false);
+
+// const [searchTerm, setSearchTerm] = useState(''); 
+
 
 const handleLogout = () => {
   // Remove authToken from localStorage
@@ -47,26 +40,66 @@ function handleMyProfile(){
   navigate("/me")
 }
 
+async function  handleMoodChange(e){
+   let word=e.target.value;
+   if(word!=='noValue'){
+     console.log(word);
+     const response= await fetch(`https://academics.newtonschool.co/api/v1/music/song?filter={"mood":"${word}"}`, {
+     headers: {
+        'projectId': 'f104bi07c490'
+     }
+    })
+     let data= await response.json();
+     let filterdSong=data.data;
+     navigate(`/mood`, { state: { filterdSong } });
+     console.log("ddddd",data);
+  }else{
+    e.target.value = 'noValue';
+    navigate('/');
+  }
+  // setSearchTerm(word);
+}
+
+
+
   return (
     <div className='navbar'>
       <div className='left-nav'>
         <div className='logo'>
             <Link to='/'><img src="https://upload.wikimedia.org/wikipedia/commons/e/ed/JioSaavn_Logo.svg" alt='img'/></Link>  
         </div> 
-        <div><Link to='/' className='link'>Music</Link></div>
-        <div><Link to='/podcast' className='link'>Podcast</Link></div>
-        <div><Link to='/gopro' className='link'>Go Pro</Link></div>
-            
+          <div className='nav-links'>
+            <div><Link to='/' className='link'>Music</Link></div>
+            <div><Link to='/podcast' className='link'>Podcast</Link></div>
+            <div><Link to='/underconstruction' className='link'>Go Pro</Link></div>
+          </div>   
       </div> 
 
        <div className="search-bar">
-           {/* <i className="fas fa-search"></i> */}
-           <input type="text" placeholder="Search" />
+         
+           <i className=" searchIcon fas fa-search"></i> 
+           <input type="text" 
+                 placeholder="Search"
+                 value={searchWord}
+                 onChange={onChange}
+                 />
+              
       </div>
 
       <div className='right-nav'> 
-          <div className='music-language'>
-             <CustomSelect options={options}/>
+          <div className='music-mood'>
+          <select
+              // value={searchTerm}
+              onChange={handleMoodChange}
+              className="select-nav"
+            >
+              <option value="noValue" className="languages">
+                Select Mood
+              </option>
+              <option value="sad">Sad</option>
+              <option value="excited">Excited</option>
+              <option value="romantic">Romantic</option>
+            </select>
           </div>
 
           {authToken ? (
@@ -93,6 +126,7 @@ function handleMyProfile(){
         )}
       </div>   
     </div>
+   
   )
 }
 

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import "./LoginForm.css";
 import { Link, useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
@@ -6,7 +6,9 @@ import { useForm } from 'react-hook-form';
 const LoginForm = () => {
 
     const { register, handleSubmit, formState: { errors } } = useForm();
+    const[inValidPassword,setInValidPassword]=useState(false);
     const navigate=useNavigate();
+    
 
     const onSubmit = async (data) => {
       data.appType = 'music';
@@ -25,21 +27,22 @@ const LoginForm = () => {
         const userData=JSON.stringify(result.data)
         localStorage.setItem('authToken', authToken);
         localStorage.setItem('userData', userData);
-        // alert('Login successful');
+        
         navigate("/");
 
       } else {
-        alert("Invalid Email or Password");
-        // Handle login error, e.g., display an error message
+        setInValidPassword(true);
         console.error('Login failed',await response.text() );
       }
     } catch (error) {
       console.error('Error:', error);
     }
   };
+ 
+ 
 
   return (
-    <form className='login' onSubmit={handleSubmit(onSubmit)}>
+    <form className='login'  onSubmit={handleSubmit(onSubmit)}>
             <div className='accounts'>
             Don't have a JioSaavn account yet? <Link to="/signup"><button className='signup-from-loginpage-btn'>Sign Up</button></Link>
             </div>
@@ -55,8 +58,12 @@ const LoginForm = () => {
                 <input type='password' 
                        placeholder='Password'
                        {...register("password", { required: true })}
+                       
+                      
                 />
                 {errors.password && <p className='error-text'>Password is required.</p>}
+
+                {inValidPassword?<p className='error-text' >Enter Valid Password</p>:''}
                 <button className='login-btn'>Continue</button>
                 <p className='para-text'><em>By selecting ‘Continue’, you agree to JioSaavn’s Terms of Service and Privacy Policy.</em></p>
         

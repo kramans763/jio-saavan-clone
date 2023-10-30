@@ -77,3 +77,8 @@
 .error-text{
     color: red;
 }
+@media (max-width: 975px){
+    .signup{
+       padding-left: 5rem;
+    }
+}

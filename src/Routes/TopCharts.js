@@ -3,6 +3,8 @@ import Navbar from '../components/Navbar/Navbar'
 import LeftSideNavbar from '../components/LeftSideNavbar/LeftSideNavbar'
 import SongCategoryLink from '../components/SongCategoryLink/SongCategoryLink'
 import SongPage from '../components/SongPage/SongPage'
+import NavbarForMobile from '../components/Navbar/NavbarForMobile'
+import Footer from '../components/Footer/Footer'
 
 const TopCharts = () => {
   return (
@@ -17,9 +19,14 @@ const TopCharts = () => {
           <SongCategoryLink />
           <SongPage 
            pageType="Top Charts"
+           currentPage={3}
            />
+           <Footer/>
     </div> 
     
+  </div>
+  <div className='navbarForMobile'>
+         <NavbarForMobile/>
   </div>
 </div>
   )
