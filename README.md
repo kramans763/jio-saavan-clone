@@ -1,70 +1,70 @@
-# Getting Started with Create React App
+Jio_Saavan_Clone
+URL https://jio-saavan-clone.netlify.app/
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Table of Contents
+Introduction
+Features
+Tech Stack
+Getting Started
+Usage
+Introduction
+The JioSaavan Clone is a music streaming platform inspired by JioSaavan, allowing users to discover, listen to, and enjoy their favorite music tracks online. This project emulates the popular music streaming service, offering a seamless and immersive musical experience.
 
-## Available Scripts
+Features
+Access to a Wide Variety of Songs: Enjoy a diverse music experience with access to a wide variety of songs via API.
 
-In the project directory, you can run:
+User Authentication: Sign up or log in to access personalized music features.
 
-### `npm start`
+Song Search: Easily find songs by searching for their titles or artists.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Mood-based Playlists: Filter songs by mood (e.g., sad, romantic, excited) to create customized playlists.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Music Controls: Play, pause, and control the volume of individual songs or entire playlists.
 
-### `npm test`
+Song Duration and Progress: View the song's duration and progress while listening.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Responsive Interface: Enjoy a user-friendly, device-responsive interface for seamless access on various devices.
 
-### `npm run build`
+Tech Stack
+The technology stack used for this project includes:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Vite
+React
+HTML
+CSS
+JavaScript
+React Router DOM
+React Toastify
+React Icons
+Material-UI (MUI)
+react-multi-carousel
+Getting Started
+To get started with the JioSaavan Clone project, follow these steps:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Clone the repository to your local machine:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+git clone https://github.com/somnathpaul99/Jio_Saavan_Clone.git
 
-### `npm run eject`
+Install the project dependencies:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+cd Jio_Saavan_Clone
+npm install
+Start the development server:
+npm run dev
+Open your web browser and access the project at http://localhost:5173/
+Usage
+Once you have the project up and running, you can:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Sign up or log in to access personalized music features.
+Search for songs by title or artist.
+Create customized playlists based on mood.
+Play, pause, and control the volume of songs and playlists.
+Enjoy a user-friendly and responsive interface for a seamless music experience.
+Contributing
+If you'd like to contribute to this project, please follow these guidelines:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Fork the repository.
+Create a new branch for your feature or bug fix: git checkout -b feature-name.
+Make your changes and commit them: git commit -m "Description of changes".
+Push your changes to your fork: git push origin feature-name.
+Create a pull request to the main repository's main branch.
